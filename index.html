@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trang web phát nhạc</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      width: 400px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Chào mừng đến trang web của tôi!</h1>
+
+  <!-- Hình ảnh -->
+  <img src="image.jpg" alt="Hình ảnh đẹp">
+
+  <!-- Nhạc tự động -->
+  <audio id="bg-music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
+
+  <script>
+    // Một số trình duyệt yêu cầu người dùng tương tác mới phát nhạc được
+    document.addEventListener("click", function () {
+      const music = document.getElementById("bg-music");
+      music.play().catch(err => {
+        console.log("Không thể tự động phát nhạc:", err);
+      });
+    }, { once: true });
+  </script>
+
+</body>
+</html>
